@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -132,12 +132,12 @@
     </div>
 
     <div class="ref-description">
-    <p>Load R objects that have been saved using <a href='gcs_save.html'>gcs_save</a> or <a href='gcs_save_image.html'>gcs_save_image</a></p>
+    <p>Load R objects that have been saved using gcs_save or gcs_save_image</p>
     </div>
 
     <pre class="usage"><span class='fu'>gcs_load</span>(
   <span class='kw'>file</span> <span class='kw'>=</span> <span class='st'>".RData"</span>,
-  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(),
+  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(),
   <span class='kw'>envir</span> <span class='kw'>=</span> <span class='no'>.GlobalEnv</span>,
   <span class='kw'>saveToDisk</span> <span class='kw'>=</span> <span class='no'>file</span>,
   <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
@@ -174,16 +174,16 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The argument <code>file</code>'s default is to load an image file
-  called <code>.RData</code> from <a href='gcs_save_image.html'>gcs_save_image</a> into the Global environment.</p>
+  called <code>.RData</code> from gcs_save_image into the Global environment.</p>
 <p>This would overwrite your existing <code>.RData</code> file in the working directory, so
   change the file name if you don't wish this to be the case.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other R session data functions: 
-<code><a href='gcs_save_all.html'>gcs_save_all</a>()</code>,
-<code><a href='gcs_save_image.html'>gcs_save_image</a>()</code>,
-<code><a href='gcs_save.html'>gcs_save</a>()</code>,
-<code><a href='gcs_source.html'>gcs_source</a>()</code></p></div>
+<code>gcs_save_all()</code>,
+<code>gcs_save_image()</code>,
+<code>gcs_save()</code>,
+<code>gcs_source()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

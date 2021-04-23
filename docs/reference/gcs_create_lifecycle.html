@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -132,7 +132,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Use this to set rules for how long objects last in a bucket in <a href='gcs_create_bucket.html'>gcs_create_bucket</a></p>
+    <p>Use this to set rules for how long objects last in a bucket in gcs_create_bucket</p>
     </div>
 
     <pre class="usage"><span class='fu'>gcs_create_lifecycle</span>(
@@ -169,18 +169,18 @@
 
     <div class='dont-index'><p>Lifecycle documentation <a href='https://cloud.google.com/storage/docs/lifecycle'>https://cloud.google.com/storage/docs/lifecycle</a></p>
 <p>Other bucket functions: 
-<code><a href='gcs_create_bucket.html'>gcs_create_bucket</a>()</code>,
-<code><a href='gcs_delete_bucket.html'>gcs_delete_bucket</a>()</code>,
-<code><a href='gcs_get_bucket.html'>gcs_get_bucket</a>()</code>,
-<code><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a>()</code>,
-<code><a href='gcs_global_bucket.html'>gcs_global_bucket</a>()</code>,
-<code><a href='gcs_list_buckets.html'>gcs_list_buckets</a>()</code></p></div>
+<code>gcs_create_bucket()</code>,
+<code>gcs_delete_bucket()</code>,
+<code>gcs_get_bucket()</code>,
+<code>gcs_get_global_bucket()</code>,
+<code>gcs_global_bucket()</code>,
+<code>gcs_list_buckets()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
   <span class='no'>lifecycle</span> <span class='kw'>&lt;-</span> <span class='fu'>gcs_create_lifecycle</span>(<span class='kw'>age</span> <span class='kw'>=</span> <span class='fl'>30</span>)
 
-  <span class='fu'><a href='gcs_create_bucket.html'>gcs_create_bucket</a></span>(<span class='st'>"your-bucket-lifecycle"</span>,
+  <span class='fu'>gcs_create_bucket</span>(<span class='st'>"your-bucket-lifecycle"</span>,
                      <span class='kw'>projectId</span> <span class='kw'>=</span> <span class='st'>"your-project"</span>,
                      <span class='kw'>location</span> <span class='kw'>=</span> <span class='st'>"EUROPE-NORTH1"</span>,
                      <span class='kw'>storageClass</span> <span class='kw'>=</span> <span class='st'>"REGIONAL"</span>,

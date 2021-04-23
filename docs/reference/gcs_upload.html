@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -137,7 +137,7 @@
 
     <pre class="usage"><span class='fu'>gcs_upload</span>(
   <span class='no'>file</span>,
-  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(),
+  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(),
   <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/deparse.html'>deparse</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>substitute</a></span>(<span class='no'>file</span>)),
   <span class='kw'>object_function</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
@@ -175,7 +175,7 @@
     </tr>
     <tr>
       <th>object_metadata</th>
-      <td><p>Optional metadata for object created via <a href='gcs_metadata_object.html'>gcs_metadata_object</a></p></td>
+      <td><p>Optional metadata for object created via gcs_metadata_object</p></td>
     </tr>
     <tr>
       <th>predefinedAcl</th>
@@ -231,13 +231,13 @@ Use <code>name</code> to override this.</p>
 <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 
 <span class='co'>## set global bucket so don't need to keep supplying in future calls</span>
-<span class='fu'><a href='gcs_global_bucket.html'>gcs_global_bucket</a></span>(<span class='st'>"my-bucket"</span>)
+<span class='fu'>gcs_global_bucket</span>(<span class='st'>"my-bucket"</span>)
 
 <span class='co'>## by default will convert dataframes to csv</span>
 <span class='fu'>gcs_upload</span>(<span class='no'>mtcars</span>)
 
 <span class='co'>## mtcars has been renamed to mtcars.csv</span>
-<span class='fu'><a href='gcs_list_objects.html'>gcs_list_objects</a></span>()
+<span class='fu'>gcs_list_objects</span>()
 
 <span class='co'>## to specify the name, use the name argument</span>
 <span class='fu'>gcs_upload</span>(<span class='no'>mtcars</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"my_mtcars.csv"</span>)

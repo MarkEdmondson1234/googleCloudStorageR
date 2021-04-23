@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Performs <a href='https://rdrr.io/r/base/save.html'>save</a> then saves it to Google Cloud Storage.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gcs_save</span>(<span class='no'>...</span>, <span class='no'>file</span>, <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(), <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sys.parent.html'>parent.frame</a></span>())</pre>
+    <pre class="usage"><span class='fu'>gcs_save</span>(<span class='no'>...</span>, <span class='no'>file</span>, <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(), <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sys.parent.html'>parent.frame</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,18 +163,18 @@
     <p>The GCS object</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>For all session data use <a href='gcs_save_image.html'>gcs_save_image</a> instead.</p>
-<p><code>gcs_save(ob1, ob2, ob3, file = "mydata.RData")</code> will save the objects specified to an <code>.RData</code> file then save it to Cloud Storage, to be loaded later using <a href='gcs_load.html'>gcs_load</a>.</p>
-<p>For any other use, its better to use <a href='gcs_upload.html'>gcs_upload</a> and <a href='gcs_get_object.html'>gcs_get_object</a> instead.</p>
-<p>Restore the R objects using <code><a href='gcs_load.html'>gcs_load(bucket = "your_bucket")</a></code></p>
+    <p>For all session data use gcs_save_image instead.</p>
+<p><code>gcs_save(ob1, ob2, ob3, file = "mydata.RData")</code> will save the objects specified to an <code>.RData</code> file then save it to Cloud Storage, to be loaded later using gcs_load.</p>
+<p>For any other use, its better to use gcs_upload and gcs_get_object instead.</p>
+<p>Restore the R objects using <code>gcs_load(bucket = "your_bucket")</code></p>
 <p>This will overwrite any data within your local environment with the same name.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other R session data functions: 
-<code><a href='gcs_load.html'>gcs_load</a>()</code>,
-<code><a href='gcs_save_all.html'>gcs_save_all</a>()</code>,
-<code><a href='gcs_save_image.html'>gcs_save_image</a>()</code>,
-<code><a href='gcs_source.html'>gcs_source</a>()</code></p></div>
+<code>gcs_load()</code>,
+<code>gcs_save_all()</code>,
+<code>gcs_save_image()</code>,
+<code>gcs_source()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -73,7 +73,7 @@ The object will be available until the specified timestamp." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -150,7 +150,7 @@ The object will be available until the specified timestamp.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>meta_obj</th>
-      <td><p>A meta object from <a href='gcs_get_object.html'>gcs_get_object</a></p></td>
+      <td><p>A meta object from gcs_get_object</p></td>
     </tr>
     <tr>
       <th>expiration_ts</th>
@@ -177,14 +177,14 @@ The object will be available until the specified timestamp.</p>
 
     <div class='dont-index'><p><a href='https://cloud.google.com/storage/docs/access-control/signed-urls'>https://cloud.google.com/storage/docs/access-control/signed-urls</a></p>
 <p>Other download functions: 
-<code><a href='gcs_download_url.html'>gcs_download_url</a>()</code>,
-<code><a href='gcs_parse_download.html'>gcs_parse_download</a>()</code></p></div>
+<code>gcs_download_url()</code>,
+<code>gcs_parse_download()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 
-<span class='no'>obj</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='gcs_get_object.html'>gcs_get_object</a></span>(<span class='st'>"your_file"</span>, <span class='kw'>meta</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='no'>obj</span> <span class='kw'>&lt;-</span> <span class='fu'>gcs_get_object</span>(<span class='st'>"your_file"</span>, <span class='kw'>meta</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='no'>signed</span> <span class='kw'>&lt;-</span> <span class='fu'>gcs_signed_url</span>(<span class='no'>obj</span>)
 

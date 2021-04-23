@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -129,56 +129,70 @@
       <small>Source: <a href='https://github.com/cloudyr/googleCloudStorageR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="googlecloudstorager-060" class="section level1">
+    <div id="googlecloudstorage-0-6-0-9000" class="section level1">
+<h1 class="page-header" data-toc-text="0.6.0.9000">
+<a href="#googlecloudstorage-0-6-0-9000" class="anchor"></a>googleCloudStorage 0.6.0.9000<small> Unreleased </small>
+</h1>
+<ul>
+<li>Fix url encoding issue for multipart uploads (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/139'>#139</a> - thanks <a href='https://github.com/jomatt'>@jomatt</a>)</li>
+<li>Add downloading a folder example to <code>gcs_get_object()</code> <a href='https://github.com/cloudyr/googleCloudStorageR/issues/144'>#144</a></li>
+<li>Improve message feedback for downloading objects</li>
+<li>
+<code>gcs_upload()</code> will now retry with a warning if using legacy ACL settings for a bucket with uniform bucket-level access enabled - will retry with <code>predefinedAcl='bucketLevel'</code>
+</li>
+<li>Add <code>gcs_parse_rds()</code> to help parsing RDS objects for <code>gcs_get_object()</code> <a href='https://github.com/cloudyr/googleCloudStorageR/issues/146'>#146</a></li>
+</ul>
+</div>
+    <div id="googlecloudstorager-0-6-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.6.0">
-<a href="#googlecloudstorager-060" class="anchor"></a>googleCloudStorageR 0.6.0<small> Unreleased </small>
+<a href="#googlecloudstorager-0-6-0" class="anchor"></a>googleCloudStorageR 0.6.0<small> 2021-01-05 </small>
 </h1>
 <ul>
 <li>Let users auth via an email again via <code>gcs_auth</code>
 </li>
-<li>correct file.copy behaviour in <code><a href="../reference/gcs_save_all.html">gcs_load_all()</a></code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/112'>#112</a>) - thanks <a href='https://github.com/jasonmhoule'>@jasonmhoule</a></li>
+<li>correct file.copy behaviour in <code>gcs_load_all()</code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/112'>#112</a>) - thanks <a href='https://github.com/jasonmhoule'>@jasonmhoule</a></li>
 <li>Allow GCS uploads if ACL has been set at bucket level (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/111'>#111</a>)</li>
-<li>Let users set the boundary between simple and resumable upload limit via new option <code><a href="https://rdrr.io/r/base/options.html">option(googleCloudStorageR.upload_limit)</a></code> or <code><a href="../reference/gcs_upload.html">gcs_upload_set_limit()</a></code> - default is 5000000L or 5MB (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/120'>#120</a>)</li>
+<li>Let users set the boundary between simple and resumable upload limit via new option <code><a href="https://rdrr.io/r/base/options.html">option(googleCloudStorageR.upload_limit)</a></code> or <code>gcs_upload_set_limit()</code> - default is 5000000L or 5MB (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/120'>#120</a>)</li>
 <li>Suppress warning for when resumable uploads are requesting the upload URL (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/120'>#120</a>)</li>
 <li>Fix ability to upload meta data with objects (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/108'>#108</a>)</li>
 <li>If file has no filesize will message without an error (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/123'>#123</a>)</li>
 <li>If project has no buckets will give NULL and not an error (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/100'>#100</a>)</li>
-<li>Fix <code><a href="../reference/gcs_save_all.html">gcs_save_all()</a></code> to also accept bucket level ACL (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/129'>#129</a>)</li>
-<li>Fix listing buckets for projects <code><a href="../reference/gcs_list_buckets.html">gcs_list_buckets()</a></code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/100'>#100</a>)</li>
-<li>Add <code><a href="../reference/gcs_setup.html">gcs_setup()</a></code> to help first time setup</li>
+<li>Fix <code>gcs_save_all()</code> to also accept bucket level ACL (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/129'>#129</a>)</li>
+<li>Fix listing buckets for projects <code>gcs_list_buckets()</code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/100'>#100</a>)</li>
+<li>Add <code>gcs_setup()</code> to help first time setup</li>
 </ul>
 </div>
-    <div id="googlecloudstorager-051" class="section level1">
+    <div id="googlecloudstorager-0-5-1" class="section level1">
 <h1 class="page-header" data-toc-text="0.5.1">
-<a href="#googlecloudstorager-051" class="anchor"></a>googleCloudStorageR 0.5.1<small> 2019-08-31 </small>
+<a href="#googlecloudstorager-0-5-1" class="anchor"></a>googleCloudStorageR 0.5.1<small> 2019-08-31 </small>
 </h1>
 <ul>
-<li>Fix <code><a href="../reference/gcs_save_all.html">gcs_save_all()</a></code> to use new <code>zip</code> for filepaths (Thanks <a href='https://github.com/caewok'>@caewok</a>) <a href='https://github.com/cloudyr/googleCloudStorageR/issues/107'>#107</a></li>
+<li>Fix <code>gcs_save_all()</code> to use new <code>zip</code> for filepaths (Thanks <a href='https://github.com/caewok'>@caewok</a>) <a href='https://github.com/cloudyr/googleCloudStorageR/issues/107'>#107</a></li>
 <li>fix unable to return object metadata (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/105'>#105</a>)</li>
 <li>fix signature mismatch if object name contains / (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/102'>#102</a>)</li>
-<li>document <code><a href="../reference/gcs_version_bucket.html">gcs_version_bucket()</a></code> - thanks <a href='https://github.com/j450h1'>@j450h1</a> ! (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/96'>#96</a>)</li>
+<li>document <code>gcs_version_bucket()</code> - thanks <a href='https://github.com/j450h1'>@j450h1</a> ! (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/96'>#96</a>)</li>
 </ul>
 </div>
-    <div id="googlecloudstorager-050" class="section level1">
+    <div id="googlecloudstorager-0-5-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.5.0">
-<a href="#googlecloudstorager-050" class="anchor"></a>googleCloudStorageR 0.5.0<small> 2019-07-28 </small>
+<a href="#googlecloudstorager-0-5-0" class="anchor"></a>googleCloudStorageR 0.5.0<small> 2019-07-28 </small>
 </h1>
 <ul>
 <li>Refactor authentication to favour json file and fix auth hangs (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/87'>#87</a>)</li>
 <li>Prevent error if bucket name is empty string (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/90'>#90</a>)</li>
 <li>
-<code><a href="../reference/gcs_upload.html">gcs_upload()</a></code> will use file extension of <code>name</code> in its temporary file (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/91'>#91</a>)</li>
-<li>Add <code><a href="../reference/gcs_copy_object.html">gcs_copy_object()</a></code>
+<code>gcs_upload()</code> will use file extension of <code>name</code> in its temporary file (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/91'>#91</a>)</li>
+<li>Add <code>gcs_copy_object()</code>
 </li>
-<li>Add <code><a href="../reference/gcs_compose_objects.html">gcs_compose_objects()</a></code>
+<li>Add <code>gcs_compose_objects()</code>
 </li>
-<li>Refactor <code><a href="../reference/gcs_list_objects.html">gcs_list_objects()</a></code> to googleAuthR &gt; 0.7 <code>gar_api_page()</code>
+<li>Refactor <code>gcs_list_objects()</code> to googleAuthR &gt; 0.7 <code>gar_api_page()</code>
 </li>
 </ul>
 </div>
-    <div id="googlecloudstorager-040" class="section level1">
+    <div id="googlecloudstorager-0-4-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.4.0">
-<a href="#googlecloudstorager-040" class="anchor"></a>googleCloudStorageR 0.4.0<small> 2017-11-17 </small>
+<a href="#googlecloudstorager-0-4-0" class="anchor"></a>googleCloudStorageR 0.4.0<small> 2017-11-17 </small>
 </h1>
 <div id="major-changes" class="section level2">
 <h2 class="hasAnchor">
@@ -197,9 +211,9 @@
 </ul>
 </div>
 </div>
-    <div id="googlecloudstorager-030" class="section level1">
+    <div id="googlecloudstorager-0-3-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.3.0">
-<a href="#googlecloudstorager-030" class="anchor"></a>googleCloudStorageR 0.3.0<small> 2017-05-27 </small>
+<a href="#googlecloudstorager-0-3-0" class="anchor"></a>googleCloudStorageR 0.3.0<small> 2017-05-27 </small>
 </h1>
 <div id="major-changes-1" class="section level2">
 <h2 class="hasAnchor">
@@ -209,10 +223,10 @@
 <li>Let <code>gcs_object_metaname</code> not require name so it can be reused (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/56'>#56</a> - thanks seandavi)</li>
 <li>Add support for <code>gs://</code> style URLs for object names (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/57'>#57</a> - thanks seandavi)</li>
 <li>Add what the public URL would be to an objects print method (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/59'>#59</a> - thanks mwhitaker)</li>
-<li>Add check to <code><a href="../reference/gcs_get_bucket.html">gcs_get_bucket()</a></code> to only expect length 1 character vectors for bucket name. (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/60'>#60</a>)</li>
+<li>Add check to <code>gcs_get_bucket()</code> to only expect length 1 character vectors for bucket name. (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/60'>#60</a>)</li>
 <li>Add paging for <code>gcs_object_list</code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/58'>#58</a> - thanks <a href='https://github.com/G3rtjan'>@G3rtjan</a>)</li>
 <li>Add <code>saveToDisk</code> option to <code>gcs_load</code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/52'>#52</a> - thanks <a href='https://github.com/tomsing1'>@tomsing1</a>)</li>
-<li>Supply your own parse function to <code><a href="../reference/gcs_get_object.html">gcs_get_object()</a></code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/63'>#63</a> - thanks <a href='https://github.com/nkeriks'>@nkeriks</a>)</li>
+<li>Supply your own parse function to <code>gcs_get_object()</code> (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/63'>#63</a> - thanks <a href='https://github.com/nkeriks'>@nkeriks</a>)</li>
 <li>Support for <code>prefix</code> and <code>delimiter</code> in <code>gcs_object_list</code> to filter objects listed (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/68'>#68</a>)</li>
 <li>Default permissions on new buckets lets you write to them afterwards `projectPrivate (<a href='https://github.com/cloudyr/googleCloudStorageR/issues/62'>#62</a>)</li>
 <li>
@@ -221,9 +235,9 @@
 </ul>
 </div>
 </div>
-    <div id="googlecloudstorager-020" class="section level1">
+    <div id="googlecloudstorager-0-2-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0">
-<a href="#googlecloudstorager-020" class="anchor"></a>googleCloudStorageR 0.2.0<small> 2016-09-11 </small>
+<a href="#googlecloudstorager-0-2-0" class="anchor"></a>googleCloudStorageR 0.2.0<small> 2016-09-11 </small>
 </h1>
 <div id="major-changes-2" class="section level2">
 <h2 class="hasAnchor">
@@ -255,9 +269,9 @@
 </ul>
 </div>
 </div>
-    <div id="googlecloudstorager-010" class="section level1">
+    <div id="googlecloudstorager-0-1-0" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.0">
-<a href="#googlecloudstorager-010" class="anchor"></a>googleCloudStorageR 0.1.0<small> 2016-08-07 </small>
+<a href="#googlecloudstorager-0-1-0" class="anchor"></a>googleCloudStorageR 0.1.0<small> 2016-08-07 </small>
 </h1>
 <div id="major-changes-3" class="section level2">
 <h2 class="hasAnchor">

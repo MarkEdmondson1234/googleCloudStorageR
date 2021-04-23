@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -132,10 +132,12 @@
     </div>
 
     <div class="ref-description">
-    <p>Wrapper for <code>httr</code>'s <a href='https://httr.r-lib.org/reference/content.html'>content</a>.  This is the default function used in <a href='gcs_get_object.html'>gcs_get_object</a></p>
+    <p>Wrapper for <code>httr</code>'s <a href='https://httr.r-lib.org/reference/content.html'>content</a>.  This is the default function used in gcs_get_object</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gcs_parse_download</span>(<span class='no'>object</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='st'>"UTF-8"</span>)</pre>
+    <pre class="usage"><span class='fu'>gcs_parse_download</span>(<span class='no'>object</span>, <span class='kw'>encoding</span> <span class='kw'>=</span> <span class='st'>"UTF-8"</span>)
+
+<span class='fu'>gcs_parse_rds</span>(<span class='no'>object</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,12 +152,15 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><code>gcs_parse_rds</code> will parse .rds files created via <a href='https://rdrr.io/r/base/readRDS.html'>saveRDS</a> without saving to disk</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>gcs_get_object</p>
 <p>Other download functions: 
-<code><a href='gcs_download_url.html'>gcs_download_url</a>()</code>,
-<code><a href='gcs_signed_url.html'>gcs_signed_url</a>()</code></p></div>
+<code>gcs_download_url()</code>,
+<code>gcs_signed_url()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -137,7 +137,7 @@
 
     <pre class="usage"><span class='fu'>gcs_get_object</span>(
   <span class='no'>object_name</span>,
-  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(),
+  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(),
   <span class='kw'>meta</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>saveToDisk</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>overwrite</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -174,7 +174,7 @@
     </tr>
     <tr>
       <th>parseFunction</th>
-      <td><p>If saveToDisk is NULL, the function that will parse the download.  Defaults to <a href='gcs_parse_download.html'>gcs_parse_download</a></p></td>
+      <td><p>If saveToDisk is NULL, the function that will parse the download.  Defaults to gcs_parse_download</p></td>
     </tr>
     </table>
 
@@ -184,20 +184,20 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This differs from providing downloads via a download link as you can
-  do via <a href='gcs_download_url.html'>gcs_download_url</a></p>
+  do via gcs_download_url</p>
 <p><code>object_name</code> can use a <code>gs://</code> URI instead,
 in which case it will take the bucket name from that URI and <code>bucket</code> argument
 will be overridden.  The URLs should be in the form <code>gs://bucket/object/name</code></p>
-<p>By default if you want to get the object straight into an R session the parseFunction is <a href='gcs_parse_download.html'>gcs_parse_download</a> which wraps <code>httr</code>'s <a href='https://httr.r-lib.org/reference/content.html'>content</a>.</p>
+<p>By default if you want to get the object straight into an R session the parseFunction is gcs_parse_download which wraps <code>httr</code>'s <a href='https://httr.r-lib.org/reference/content.html'>content</a>.</p>
 <p>If you want to use your own function (say to unzip the object) then supply it here.  The first argument should take the downloaded object.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other object functions: 
-<code><a href='gcs_compose_objects.html'>gcs_compose_objects</a>()</code>,
-<code><a href='gcs_copy_object.html'>gcs_copy_object</a>()</code>,
-<code><a href='gcs_delete_object.html'>gcs_delete_object</a>()</code>,
-<code><a href='gcs_list_objects.html'>gcs_list_objects</a>()</code>,
-<code><a href='gcs_metadata_object.html'>gcs_metadata_object</a>()</code></p></div>
+<code>gcs_compose_objects()</code>,
+<code>gcs_copy_object()</code>,
+<code>gcs_delete_object()</code>,
+<code>gcs_list_objects()</code>,
+<code>gcs_metadata_object()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -205,7 +205,7 @@ will be overridden.  The URLs should be in the form <code>gs://bucket/object/nam
 
 <span class='co'>## something to download</span>
 <span class='co'>## data.frame that defaults to be called "mtcars.csv"</span>
-<span class='fu'><a href='gcs_upload.html'>gcs_upload</a></span>(<span class='no'>mtcars</span>)
+<span class='fu'>gcs_upload</span>(<span class='no'>mtcars</span>)
 
 <span class='co'>## get the mtcars csv from GCS, convert it to an R obj</span>
 <span class='fu'>gcs_get_object</span>(<span class='st'>"mtcars.csv"</span>)
@@ -221,7 +221,21 @@ will be overridden.  The URLs should be in the form <code>gs://bucket/object/nam
 }
 
 <span class='co'>## get mtcars csv with custom parse function.</span>
-<span class='fu'>gcs_get_object</span>(<span class='st'>"mtcars_meta.csv"</span>, <span class='kw'>parseFunction</span> <span class='kw'>=</span> <span class='no'>f</span>)
+<span class='fu'>gcs_get_object</span>(<span class='st'>"mtcars.csv"</span>, <span class='kw'>parseFunction</span> <span class='kw'>=</span> <span class='no'>f</span>)
+
+<span class='co'>## download an RDS file using helper gcs_parse_rds()</span>
+
+<span class='fu'>gcs_get_object</span>(<span class='st'>"obj.rds"</span>, <span class='kw'>parseFunction</span> <span class='kw'>=</span> <span class='no'>gcs_parse_rds</span>)
+
+<span class='co'>## to download from a folder in your bucket</span>
+<span class='no'>my_folder</span> <span class='kw'>&lt;-</span> <span class='st'>"your_folder/"</span>
+<span class='no'>objs</span> <span class='kw'>&lt;-</span> <span class='fu'>gcs_list_objects</span>(<span class='kw'>prefix</span> <span class='kw'>=</span> <span class='no'>my_folder</span>)
+
+<span class='fu'><a href='https://rdrr.io/r/base/files2.html'>dir.create</a></span>(<span class='no'>my_folder</span>)
+
+<span class='co'># download all the objects to that folder</span>
+<span class='no'>dls</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>lapply</a></span>(<span class='no'>objs</span>$<span class='no'>name</span>, <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'>gcs_get_object</span>(<span class='no'>x</span>, <span class='kw'>saveToDisk</span> <span class='kw'>=</span> <span class='no'>x</span>))
+
 
 }</div></pre>
   </div>

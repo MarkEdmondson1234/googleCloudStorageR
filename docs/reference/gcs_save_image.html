@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -137,7 +137,7 @@
 
     <pre class="usage"><span class='fu'>gcs_save_image</span>(
   <span class='kw'>file</span> <span class='kw'>=</span> <span class='st'>".RData"</span>,
-  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(),
+  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(),
   <span class='kw'>saveLocation</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sys.parent.html'>parent.frame</a></span>()
 )</pre>
@@ -170,15 +170,15 @@
 
     <p><code>gcs_save_image(bucket = "your_bucket")</code> will save all objects in the workspace
   to <code>.RData</code> folder on Google Cloud Storage within <code>your_bucket</code>.</p>
-<p>Restore the objects using <code><a href='gcs_load.html'>gcs_load(bucket = "your_bucket")</a></code></p>
+<p>Restore the objects using <code>gcs_load(bucket = "your_bucket")</code></p>
 <p>This will overwrite any data with the same name in your current local environment.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other R session data functions: 
-<code><a href='gcs_load.html'>gcs_load</a>()</code>,
-<code><a href='gcs_save_all.html'>gcs_save_all</a>()</code>,
-<code><a href='gcs_save.html'>gcs_save</a>()</code>,
-<code><a href='gcs_source.html'>gcs_source</a>()</code></p></div>
+<code>gcs_load()</code>,
+<code>gcs_save_all()</code>,
+<code>gcs_save()</code>,
+<code>gcs_source()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

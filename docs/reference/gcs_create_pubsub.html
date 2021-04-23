@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -138,7 +138,7 @@
     <pre class="usage"><span class='fu'>gcs_create_pubsub</span>(
   <span class='no'>topic</span>,
   <span class='no'>project</span>,
-  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(),
+  <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(),
   <span class='kw'>event_types</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
 )</pre>
 
@@ -175,9 +175,9 @@ have given your service account at least <code>pubsub.publisher</code> permissio
 
     <div class='dont-index'><p><a href='https://cloud.google.com/storage/docs/reporting-changes'>https://cloud.google.com/storage/docs/reporting-changes</a></p>
 <p>Other pubsub functions: 
-<code><a href='gcs_delete_pubsub.html'>gcs_delete_pubsub</a>()</code>,
-<code><a href='gcs_get_service_email.html'>gcs_get_service_email</a>()</code>,
-<code><a href='gcs_list_pubsub.html'>gcs_list_pubsub</a>()</code></p></div>
+<code>gcs_delete_pubsub()</code>,
+<code>gcs_get_service_email()</code>,
+<code>gcs_list_pubsub()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -187,7 +187,7 @@ have given your service account at least <code>pubsub.publisher</code> permissio
 <span class='no'>bucket</span> <span class='kw'>&lt;-</span> <span class='st'>"mybucket"</span>
 
 <span class='co'># get the email to give access</span>
-<span class='fu'><a href='gcs_get_service_email.html'>gcs_get_service_email</a></span>(<span class='no'>project</span>)
+<span class='fu'>gcs_get_service_email</span>(<span class='no'>project</span>)
 
 <span class='co'># once email has access, create a new pub/sub topic for your bucket</span>
 <span class='fu'>gcs_create_pubsub</span>(<span class='st'>"gcs_r"</span>, <span class='no'>project</span>, <span class='no'>bucket</span>)

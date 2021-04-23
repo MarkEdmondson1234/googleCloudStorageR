@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">googleCloudStorageR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0.9000</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@
     <p>Create the download URL for objects in buckets</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gcs_download_url</span>(<span class='no'>object_name</span>, <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'><a href='gcs_get_global_bucket.html'>gcs_get_global_bucket</a></span>(), <span class='kw'>public</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>gcs_download_url</span>(<span class='no'>object_name</span>, <span class='kw'>bucket</span> <span class='kw'>=</span> <span class='fu'>gcs_get_global_bucket</span>(), <span class='kw'>public</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -161,14 +161,14 @@
 
     <p><code>bucket</code> names should be length 1 or same length as <code>object_name</code></p>
 <p>Download URLs can be either authenticated behind a login that you may need to update
-  access for via <a href='gcs_update_object_acl.html'>gcs_update_object_acl</a>, or public to all if their <code>predefinedAcl = 'publicRead'</code></p>
+  access for via gcs_update_object_acl, or public to all if their <code>predefinedAcl = 'publicRead'</code></p>
 <p>Use the <code>public = TRUE</code> to return the URL accessible to all, which changes the domain name from
   <code>storage.cloud.google.com</code> to <code>storage.googleapis.com</code></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other download functions: 
-<code><a href='gcs_parse_download.html'>gcs_parse_download</a>()</code>,
-<code><a href='gcs_signed_url.html'>gcs_signed_url</a>()</code></p></div>
+<code>gcs_parse_download()</code>,
+<code>gcs_signed_url()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
